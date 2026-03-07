@@ -4,6 +4,48 @@ const closeBtn = document.getElementById('closeBtn')
 
 
 
+// const manageSpinner = (status) => {
+//   if (status == true) {
+//     document.getElementById('spinner').classList.remove('hidden')
+//     document.getElementById('issue-container').classList.add('hidden');
+   
+//   }
+//   else {
+//        document.getElementById('spinner').classList.add('hidden')
+//     document.getElementById('issue-container').classList.remove('hidden');
+//   }
+
+// }
+
+// all
+allBtn.addEventListener("click", () => {
+  toggleStyle("AllBtn");
+  LoadIssues();
+});
+
+// open filter
+openBtn.addEventListener("click", () => {
+  toggleStyle("openBtn");
+
+  fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+    .then(res => res.json())
+    .then(data => {
+      const openIssues = data.data.filter(issue => issue.status === "open");
+      displayIssue(openIssues);
+    });
+});
+
+// close filter
+closeBtn.addEventListener("click", () => {
+  toggleStyle("closeBtn");
+
+  fetch("https://phi-lab-server.vercel.app/api/v1/lab/issues")
+    .then(res => res.json())
+    .then(data => {
+      const closeIssues = data.data.filter(issue => issue.status === "closed");
+      displayIssue(closeIssues);
+    });
+});
 function toggleStyle(id) {
    
     allBtn.classList.add('bg-base-200', 'text-black')
@@ -28,7 +70,9 @@ const LoadIssues=() => {
 }
 
 const displayIssue=(issues) => {
-    console.log( issues )
+  console.log(issues);
+  const issuCounter = document.getElementById('issu-counter');
+  issuCounter.innerHTML = `${issues.length} Issues`;
     const getId=document.getElementById("issue-container")
     getId.innerHTML="";
 
@@ -66,10 +110,30 @@ const displayIssue=(issues) => {
     
 }
 
-allBtn.addEventListener('click', function () {
-  displayIssue(issues);
-  console.log(issues);
-})
+// allBtn.addEventListener('click', function () {
+//   displayIssue(issues.issues);
+//   console.log(issues);
+// })
+
+
+// modal use korar somy
+// const loadIssues = (id) => {
+//   manageSpinner(true);
+//   const url = ` https://phi-lab-server.vercel.app/api/v1/lab/issue/${id}`;
+
+//   fetch(url)
+//     .then(res => res.json())
+//     .then(data => {
+//       // remove all active class
+//       removeActive();
+//       const clickBtn = document.getElementById(`lesson-btn-${id}`);
+//       // console.log(clickBtn);
+//       // add active class
+//   ;
+//       displayLevelWord(data.data);
+//     })
+
+// };
 
 
 LoadIssues()
