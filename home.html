@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <!-- google fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Geist:wght@100..900&display=swap" rel="stylesheet">
+  <link rel="shortcut icon" href="assets/github-logo.png" type="image/x-icon">
+
+  <!-- tailwind+daisy -->
+  <link href="https://cdn.jsdelivr.net/npm/daisyui@5" rel="stylesheet" type="text/css" />
+  <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+  <!-- font awsome -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css"
+    integrity="sha512-2SwdPD6INVrV/lHTZbO2nodKhrnDdJK9/kg2XD1r9uGqPo1cUbujc+IYdlYdEErWNu69gVcYgdxlmVmzTWnetw=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+  <style>
+    * {
+      font-family: "Geist", sans-serif;
+    }
+  </style>
+</head>
+
+<body>
+  <header class="bg-base-100 w-11/12 mx-auto align-center items-center border-b-2">
+    <div class="flex justify-between items-center ">
+      <div class="flex items-center gap-2"><img src="assets/github-logo.png" alt="">
+        <h2 class="text-[#1F2937] text-3xl font-semibold text-center">GitHub Issues Tracker</h2>
+      </div>
+      <div class="flex">
+        <!-- search -->
+        <label class="input flex items-center gap-2">
+          <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
+          <input type="text" class="grow" placeholder="Search issues">
+        </label>
+        <p class="validator-hint"><i class="fa-solid fa-magnifying-glass"></i> Must be 10 digits</p>
+
+        <button class="btn btn-primary"> <i class="fa-solid fa-plus"></i> New issues</button>
+      </div>
+    </div>
+  </header>
+
+  <section class="pt-[60px] bg-base-200  ">
+    <div class="tab-section w-9/12 mx-auto flex gap-2 bg-base-100 p-[24px] rounded-[10px] shadow-lg ">
+      <button id="AllBtn" onclick="toggleStyle('AllBtn')"
+        class="btn btn-primary w-[120px] border-1 border-gray-200 shadow-none ">All</button>
+      <button id="openBtn" onclick="toggleStyle('openBtn')" class="btn w-[120px] ">Open</button>
+      <button id="closeBtn" onclick="toggleStyle('closeBtn')" class="btn w-[120px] ">Closed</button>
+    </div>
+  </section>
+
+  <section class="  bg-base-200 py-[16px]">
+    <div class=" issues-summary w-9/12 mx-auto bg-base-100 p-[24px] rounded-t-lg shadow-md ">
+      <div class="flex justify-between items-center">
+        <div class="flex items-center gap-1">
+          <div class=""><img src="assets/Aperture.png" alt="">
+          </div>
+          <div class="">
+            <h2 class="text-[20px] font-semibold">50 Issues</h2>
+            <h3 class="text-[##64748B]">Track and manage your project issues</h3>
+          </div>
+        </div>
+
+        <div class="flex items-center gap-2">
+          <div class="w-[20px] h-[20px] bg-[#00A96E] rounded-full"></div>
+          <div class="">Open</div>
+          <div class="w-[20px] h-[20px] bg-[#A855F7] rounded-full"></div>
+          <div class="">Closed</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="bg-base-200 w-9/12 mx-auto mt-8">
+    <div id="issue-container" class="  grid sm:grid-cols-2 md:grid-cols-4 gap-4 bg-white  ">
+
+    </div>
+  </section>
+  <script src="js/issus.js"></script>
+</body>
+
+</html>
