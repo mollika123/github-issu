@@ -33,21 +33,30 @@
       <div class="flex items-center gap-2"><img src="assets/github-logo.png" alt="">
         <h2 class="text-[#1F2937] text-3xl font-semibold text-center">GitHub Issues Tracker</h2>
       </div>
-      <div class="flex">
-        <!-- search -->
-        <label class="input flex items-center gap-2">
-          <i class="fa-solid fa-magnifying-glass text-gray-400"></i>
-          <input type="text" class="grow" placeholder="Search issues">
-        </label>
-        <p class="validator-hint"><i class="fa-solid fa-magnifying-glass"></i> Must be 10 digits</p>
+      <div class="flex justify-center items-center gap-[20px]">
+        <div>
 
-        <button class="btn btn-primary"> <i class="fa-solid fa-plus"></i> New issues</button>
+          <div class="">
+            <label class="input">
+              <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
+                  <circle cx="11" cy="11" r="8"></circle>
+                  <path d="m21 21-4.3-4.3"></path>
+                </g>
+              </svg>
+              <input type="search" id="input-search" required placeholder="Search" />
+            </label>
+          </div>
+
+          <div class="validator-hint hidden">Enter valid email address</div>
+        </div>
+        <button id="btn-search" class="btn btn-primary">Search</button>
       </div>
     </div>
   </header>
 
-  <section class="pt-[60px] bg-base-200  ">
-    <div class="tab-section w-9/12 mx-auto flex gap-2 bg-base-100 p-[24px] rounded-[10px] shadow-lg ">
+  <section class="pt-[60px]  ">
+    <div class="tab-section w-10/12 mx-auto flex gap-2 bg-base-100 p-[24px] rounded-[10px] shadow-lg ">
       <button id="AllBtn" onclick="toggleStyle('AllBtn')"
         class="btn btn-primary w-[120px] border-1 border-gray-200 shadow-none ">All</button>
       <button id="openBtn" onclick="toggleStyle('openBtn')" class="btn w-[120px] ">Open</button>
@@ -55,14 +64,14 @@
     </div>
   </section>
 
-  <section class="  bg-base-200 py-[16px]">
-    <div class=" issues-summary w-9/12 mx-auto bg-base-100 p-[24px] rounded-t-lg shadow-md ">
+  <section class="  py-[16px]">
+    <div class=" issues-summary w-10/12 mx-auto bg-base-100 p-[24px] rounded-t-lg shadow-md ">
       <div class="flex justify-between items-center">
         <div class="flex items-center gap-1">
           <div class=""><img src="assets/Aperture.png" alt="">
           </div>
           <div class="">
-            <h2 class="text-[20px] font-semibold" id="issu-counter"> Issues</h2>
+            <h2 class="text-[20px] font-semibold" id="issu-counter"> </h2>
             <h3 class="text-[##64748B]">Track and manage your project issues</h3>
           </div>
         </div>
@@ -80,15 +89,36 @@
 
   <!-- spinner -->
 
-  <section id="spinner" class="flex justify-center items-center py-10 ">
-    <span class="loading loading-spinner loading-xl"></span>
+  <section id="spinner" class="flex justify-center items-center py-10  ">
+    <span class="loading loading-bars loading-xl"></span>
   </section>
 
-  <section class="bg-base-200 w-9/12 mx-auto mt-8">
-    <div id="issue-container" class="  grid sm:grid-cols-2 md:grid-cols-4 gap-4 bg-white  ">
+  <section class="bg-base-200 w-10/12 mx-auto mt-8">
+    <div id="issue-container" class="  grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4  gap-4 bg-white  p-2">
 
     </div>
   </section>
+
+
+
+  <!-- modal -->
+  <!-- Open the modal using ID.showModal() method -->
+  <!-- <button class="btn" onclick="my_modal_5.showModal()">open modal</button> -->
+  <dialog id="word_modal" class="modal modal-bottom sm:modal-middle">
+    <div class="modal-box">
+      <div id="details-container">
+
+
+
+      </div>
+      <div class="modal-action">
+        <form method="dialog">
+          <!-- if there is a button in form, it will close the modal -->
+          <button class="btn btn-primary">Close</button>
+        </form>
+      </div>
+    </div>
+  </dialog>
   <script src="js/issus.js"></script>
 </body>
 
