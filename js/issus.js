@@ -117,8 +117,8 @@ const displayIssueDetails = (issue) => {
   </div>
 
           <h3 class="text-[#64748B]">${issue.description}</h3>
-          <div class="bg-base-200">
-            <div class="grid grid-cols-3 text-[#64748B]">
+          <div class="bg-base-200 p-5 rounded-md">
+            <div class="grid grid-cols-3 text-[#64748B] ">
               <div>Assignee</div>
               <div>Priority</div>
             </div>
