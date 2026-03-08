@@ -148,7 +148,7 @@ const displayIssue=(issues) => {
      
 addElement.addEventListener("click", () => loadIssuDetail(issue.id));
       addElement.innerHTML = `
-             <div class="bg-base-100 shadow-md rounded-md h-full  p-5 space-y-4            ${issue.status === 'open' ? 'border-t-4 border-green-600' : 'border-t-4 border-purple-600'}">
+             <div class="bg-base-100 shadow-xl rounded-md h-full  p-5 space-y-4            ${issue.status === 'open' ? 'border-t-4 border-green-600' : 'border-t-4 border-purple-600'}">
 
 
             <div  class="flex justify-between items-center">

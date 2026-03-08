@@ -13,7 +13,7 @@ document.getElementById('sign-btn').addEventListener('click', function () {
   // match userand password
 
   if (userName == "admin" && password == "admin123") {
-    alert('Sign In Succesfully');
+    alert('Sign In Successfully');
     window.location.assign('./home.html')
   }
   else {
