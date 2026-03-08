@@ -151,8 +151,8 @@ addElement.addEventListener("click", () => loadIssuDetail(issue.id));
              <div class="bg-base-100 shadow-md rounded-md h-full  p-5 space-y-4            ${issue.status === 'open' ? 'border-t-4 border-green-600' : 'border-t-4 border-purple-600'}">
 
 
-            <div  class="flex justify-end">
-           
+            <div  class="flex justify-between items-center">
+           <img class="w-6 h-6" src=assets/Open-Status.png>
              <span class="text-right bg-orange-200 text-orange-600 rounded-full px-4 py-2">${issue.priority}</span>
             </div>
            <h2 class="text-2xl font-bold text-[#1F2937]">${issue.title}</h2>
@@ -162,7 +162,7 @@ addElement.addEventListener("click", () => loadIssuDetail(issue.id));
   ${issue.labels?.[1] ? `<span class="bg-[#FFF8DB] text-[#D97706] rounded-full px-4 py-2 border border-[#FDE68A] font-medium">${issue.labels[1]}</span>` : ""}
 </div>
         <br>
-        <hr class="border-gray-400">
+        <hr class="border-gray-400 -mx-5">
         <div class="">
             <p class="text-[#64748B]">${issue.author}</p>
             <p class="text-[#64748B]">${issue.createdAt}</p>
