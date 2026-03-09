@@ -178,6 +178,7 @@ addElement.addEventListener("click", () => loadIssuDetail(issue.id));
 }
 
 document.getElementById('btn-search').addEventListener('click', () => {
+  manageSpinner(true);
  const input= document.getElementById('input-search');
 
   const searchValue = input.value.trim().toLowerCase();
@@ -190,6 +191,7 @@ document.getElementById('btn-search').addEventListener('click', () => {
       console.log(allWords);
       const filterWords = allWords.filter(word => word.title.toLowerCase().includes(searchValue));
       displayIssue(filterWords);
+      manageSpinner(false);
   })
 })
 
