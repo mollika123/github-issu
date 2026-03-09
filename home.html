@@ -28,30 +28,33 @@
 </head>
 
 <body>
-  <header class="bg-base-100 w-11/12 mx-auto align-center items-center border-b-2">
-    <div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
-      <!-- <div class="flex flex-row md:flex-col"></div> -->
-      <div class="flex items-center gap-2"><img src="assets/github-logo.png" alt="">
-        <h2 class="text-[#1F2937] text-3xl font-semibold text-center">GitHub Issues Tracker</h2>
-      </div>
-      <div class="flex justify-center items-center gap-[20px]">
-        <div>
-
-          <div class="">
-            <label class="input">
-              <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
-                <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none" stroke="currentColor">
-                  <circle cx="11" cy="11" r="8"></circle>
-                  <path d="m21 21-4.3-4.3"></path>
-                </g>
-              </svg>
-              <input type="search" id="input-search" required placeholder="Search" />
-            </label>
-          </div>
-
-          <div class="validator-hint hidden">Enter valid email address</div>
+  <header class="border-b-2">
+    <div class="bg-base-100 w-11/12 mx-auto align-center items-center pt-[10px] pb-[10px] ">
+      <div class="flex flex-col gap-4 md:flex-row md:justify-between md:items-center">
+        <!-- <div class="flex flex-row md:flex-col"></div> -->
+        <div class="flex items-center gap-2"><img src="assets/github-logo.png" alt="">
+          <h2 class="text-[#1F2937] text-3xl font-semibold text-center">GitHub Issues Tracker</h2>
         </div>
-        <button id="btn-search" class="btn btn-primary">Search</button>
+        <div class="flex justify-center items-center gap-[20px]">
+          <div>
+
+            <div class="">
+              <label class="input">
+                <svg class="h-[1em] opacity-50" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                  <g stroke-linejoin="round" stroke-linecap="round" stroke-width="2.5" fill="none"
+                    stroke="currentColor">
+                    <circle cx="11" cy="11" r="8"></circle>
+                    <path d="m21 21-4.3-4.3"></path>
+                  </g>
+                </svg>
+                <input type="search" id="input-search" required placeholder="Search" />
+              </label>
+            </div>
+
+            <div class="validator-hint hidden">Enter valid email address</div>
+          </div>
+          <button id="btn-search" class="btn btn-primary">Search</button>
+        </div>
       </div>
     </div>
   </header>
